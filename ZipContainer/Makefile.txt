@@ -1,0 +1,11 @@
+all:
+	gcc -Wl,--no-as-needed -lcap -lseccomp zipcontainer.c
+
+run:
+	sudo ./a.out -u 0 -m ~/busybox-1.36-rootfs/ -c /bin/echo "hello from inside container"
+
+run-sh:
+	sudo ./a.out -u 0 -m ~/busybox-1.36-rootfs/ -c /bin/sh
+
+
+
